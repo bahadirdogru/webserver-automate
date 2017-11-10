@@ -114,7 +114,9 @@ clear;
 echo "Server-Automate Installation is ascomplished !!!";
 echo " ";
 echo "Ajenti Panel: https://ipadress:8000";
-echo "User name: root and Password: admin";
-echo "Server will be restart in 10 seconds";
-sleep 10;
+echo "SSH Port is now 22222";
+echo "2GB Swap ram is configured";
+echo "Php7 Nginx Mysql is installed and can be configured in Ajenti Panel";
+echo "Server will be restart in 30 seconds";
+sleep 30;
 reboot
