@@ -71,17 +71,22 @@ dpkg -i mysql-apt-config_0.8.8-1_all.deb
 rm mysql-apt-config_0.8.8-1_all.deb
 
 # Cleaning and updating server to be ready.
-apt-get autoremove;
-apt-get autoclean;
-apt-get update;
-apt-get upgrade;
+apt-get -y autoremove;
+apt-get -y autoclean;
+apt-get -y update;
+apt-get -y upgrade;
 
 # Install packages
 echo "---*** Paketler kuruluyor ***---";
 sleep 3;
-apt-get -y install nginx redis-server memcached fail2ban php7.0-fpm php7.0-mbstring php7.0-curl php7.0-gd php7.0-mcrypt php7.0-mysql php7.0-soap php7.0-xml php7.0-json php7.0-zip php7.0-cli php7.0-common mysql-server;
+apt-get -y install nginx redis-server memcached unzip zip fail2ban php7.0-fpm php7.0-mbstring php7.0-curl php7.0-gd php7.0-mcrypt php7.0-mysql php7.0-soap php7.0-xml php7.0-json php7.0-zip php7.0-cli php7.0-common mysql-server;
 wget -O- https://raw.github.com/ajenti/ajenti/1.x/scripts/install-debian.sh | sh;
 apt-get -y install ajenti-v ajenti-v-mysql ajenti-v-php7.0-fpm ajenti-v-ftp-pureftpd ajenti-v-nginx;
+
+# FOR NODEJS PACKAGES
+# curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -; # İnstall NodeJs Repository
+# apt-get -y install nodejs;
+
 
 # Fail2Ban Configuration
 cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local;
@@ -100,5 +105,9 @@ sed -i 's/("Access-Control-Max-Age", 3600)/("Access-Control-Max-Age", "3600")/g'
 sed -i 's/("Access-Control-Max-Age", 3600)/("Access-Control-Max-Age", "3600")/g' /usr/share/pyshared/socketio/handler.py;
 
 echo "KURLUM TAMAM";
-
-#reboot
+echo " ";
+echo "Ajenti Panel: https://ipadress:8000";
+echo "User name: root and Password: admin";
+echo "Server will be restart in 10 seconds";
+sleep 10;
+reboot
