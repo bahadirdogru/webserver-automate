@@ -9,16 +9,18 @@
 # Nginx Fail2ban configuration https://www.digitalocean.com/community/tutorials/how-to-protect-an-nginx-server-with-fail2ban-on-ubuntu-14-04
 
 # Bismillah
-clear 
-echo "---*** Kurulum Başlasın... ***---";
+clear;
+echo "---*** Bismillah | Lets get started... ***---";
 sleep 3;
 
 # I do not use as a mail server3or any mail features. So delete exim packages.
-echo "---*** Exim paketlerine gerek yok ***---";
+clear;
+echo "---*** We don't need any mail packages like exim4 ***---";
 apt-get -y remove --purge exim4*; 
 
 # I change ssh port to 22222. Do not use default never.
-echo "---*** SSH portu 22222 olsun ***---";
+clear;
+echo "---*** Changing SSH Ports ***---";
 sleep 3;
 sed -i 's/#Port 22/Port 22222/g' /etc/ssh/sshd_config;
 
@@ -32,7 +34,7 @@ sed -i 's/#Port 22/Port 22222/g' /etc/ssh/sshd_config;
 # file.txt = dosya adı
 
 # Swap memory configuring as 2 GB. Just change 2G if you want it.
-echo "---*** 2GB Swap olsun ***---";
+echo "---*** Creating Swap Memory File ***---";
 sleep 3;
 fallocate -l  2G /swapfile;
 chmod 600 /swapfile;
@@ -45,7 +47,8 @@ echo vm.swappiness = 10 >>/etc/sysctl.conf;
 echo vm.vfs_cache_pressure = 50 >>/etc/sysctl.conf;
 
 # DotDeb repository.
-echo "---*** DotDeb repository ekleniyor ***---";
+clear;
+echo "---*** Adding DotDeb repository ***---";
 sleep 3;
 cd /tmp || exit;
 wget https://www.dotdeb.org/dotdeb.gpg;
@@ -55,7 +58,8 @@ echo deb http://packages.dotdeb.org stretch all >> /etc/apt/sources.list;
 echo deb-src http://packages.dotdeb.org stretch all >> /etc/apt/sources.list;
 
 # I add latest stable nginx repositery.
-echo "---*** Nginx repository ekleniyor ***---";
+clear;
+echo "---*** Adding Nginx repository ***---";
 sleep 3;
 wget https://nginx.org/keys/nginx_signing.key;
 apt-key add nginx_signing.key;
@@ -64,7 +68,8 @@ echo deb-src http://nginx.org/packages/debian/ stretch nginx >> /etc/apt/sources
 
 # Add Mysql Repository
 # Get latest link from https://dev.mysql.com/downloads/repo/apt/
-echo "---*** Nginx repository ekleniyor ***---";
+clear;
+echo "---*** Adding Mysql repository ***---";
 sleep 3;
 wget https://dev.mysql.com/get/mysql-apt-config_0.8.8-1_all.deb
 dpkg -i mysql-apt-config_0.8.8-1_all.deb
@@ -77,7 +82,8 @@ apt-get -y update;
 apt-get -y upgrade;
 
 # Install packages
-echo "---*** Paketler kuruluyor ***---";
+clear;
+echo "---*** Start Installation ***---";
 sleep 3;
 apt-get -y install nginx redis-server memcached unzip zip fail2ban php7.0-fpm php7.0-mbstring php7.0-curl php7.0-gd php7.0-mcrypt php7.0-mysql php7.0-soap php7.0-xml php7.0-json php7.0-zip php7.0-cli php7.0-common mysql-server;
 wget -O- https://raw.github.com/ajenti/ajenti/1.x/scripts/install-debian.sh | sh;
@@ -96,15 +102,16 @@ sed -i 's/# bantime = 3600/bantime = 3600/g' /etc/fail2ban/jail.local;
 
 
 # Configure Mysql Secure Installation
-echo "---*** Mysql Ayarlarını yap ***---";
+clear;
+echo "---*** Configure Mysql ***---";
 sleep 3;
 mysql_secure_installation
 
 # In Ajenti python files there is a forgotten bug. This code blocks correct that.
 sed -i 's/("Access-Control-Max-Age", 3600)/("Access-Control-Max-Age", "3600")/g' /usr/share/pyshared/socketio/transports.py;
 sed -i 's/("Access-Control-Max-Age", 3600)/("Access-Control-Max-Age", "3600")/g' /usr/share/pyshared/socketio/handler.py;
-
-echo "KURLUM TAMAM";
+clear;
+echo "Server-Automate Installation is ascomplished !!!";
 echo " ";
 echo "Ajenti Panel: https://ipadress:8000";
 echo "User name: root and Password: admin";
