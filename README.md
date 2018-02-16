@@ -1,5 +1,5 @@
 # webserver-automate
-With Ajenti web panel configure a nginx Web Server.
+With Ajenti web panel configure a nginx Web Server. Also there is auto backup shell scripts.
 I use generaly debian. You will find the bash scripts for debian.
 
 For download with wget copy the codes below.
