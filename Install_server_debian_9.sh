@@ -85,7 +85,7 @@ apt-get -y upgrade;
 clear;
 echo "---*** Start Installation ***---";
 sleep 3;
-apt-get -y install nginx redis-server memcached unzip zip fail2ban php7.0-fpm php7.0-mbstring php7.0-curl php7.0-gd php7.0-mcrypt php7.0-mysql php7.0-soap php7.0-xml php7.0-json php7.0-zip php7.0-cli php7.0-common mysql-server;
+apt-get -y install nginx redis-server memcached unzip zip fail2ban php7.0-fpm php-redis php-memcached php7.0-mbstring php7.0-curl php7.0-gd php7.0-mcrypt php7.0-mysql php7.0-soap php7.0-xml php7.0-json php7.0-zip php7.0-cli php7.0-common mysql-server;
 wget -O- https://raw.github.com/ajenti/ajenti/1.x/scripts/install-debian.sh | sh;
 apt-get -y install ajenti-v ajenti-v-mysql ajenti-v-php7.0-fpm ajenti-v-ftp-pureftpd ajenti-v-nginx;
 
