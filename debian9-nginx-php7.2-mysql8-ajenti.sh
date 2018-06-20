@@ -90,6 +90,10 @@ apt-get -y install nginx unzip zip fail2ban php7.2-fpm php7.2-mbstring php7.2-cu
 wget -O- https://raw.github.com/ajenti/ajenti/1.x/scripts/install-debian.sh | sh;
 apt-get -y install ajenti-v ajenti-v-mysql ajenti-v-php7.2-fpm ajenti-v-ftp-pureftpd ajenti-v-nginx;
 
+# Install Composer
+curl -sS https://getcomposer.org/installer | php;
+mv composer.phar /usr/local/bin/composer;
+composer self-update;
 
 # Fail2Ban Configuration
 cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local;
