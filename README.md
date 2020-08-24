@@ -1,13 +1,15 @@
 # webserver-automate
-With Ajenti web panel configure a nginx Web Server. Also there is auto backup shell scripts.
-I use generaly debian. You will find the bash scripts for debian.
 
-For download with wget copy the codes below.
+## Download Automated Bash Script Code
 
-wget https://raw.githubusercontent.com/bahadirdogru/webserver-automate/master/debian9-php7.4-nginx-mariadb-ajenti.sh
+With Ajenti web panel configure a nginx Web Server. Also there is auto backup shell scripts. I use generaly debian. You will find the bash scripts for debian.
 
-wget https://raw.githubusercontent.com/bahadirdogru/webserver-automate/master/install_ghost_server_debian_9-php7.0.sh
+| System 	  |Http Server |Language 	| Database 	 | Web Panel 	 |Download Command|
+|---------- |------------|----------|------------|---------------|----------------|
+|Debian9	  |Nginx       |Php 7.0   | Mysql      |   Ajenti 1    |wget [Install_server_debian_9-php7.0.sh](https://raw.githubusercontent.com/bahadirdogru/webserver-automate/master/Install_server_debian_9-php7.0.sh)|
+|Debian9	  |Nginx       |Php 7.2   | Mysql      | Ajenti 1      |wget [debian9-nginx-php7.2-mysql8-ajenti.sh](https://raw.githubusercontent.com/bahadirdogru/webserver-automate/master/debian9-nginx-php7.2-mysql8-ajenti.sh) |
+|Debian9	  |Nginx       |Php 7.4   | MariaDb 15 | Ajenti 1     |wget [debian9-php7.4-nginx-mariadb-ajenti.sh](https://raw.githubusercontent.com/bahadirdogru/webserver-automate/master/debian9-php7.4-nginx-mariadb-ajenti.sh) |
+|Debian10	  |Nginx       |Php 7.4   | MariaDb 15 | Ajenti 1      |wget [debian10-php7.4-nginx-mariadb-ajenti.sh](https://raw.githubusercontent.com/bahadirdogru/webserver-automate/master/debian10-php7.4-nginx-mariadb-ajenti.sh) |
 
-wget https://raw.githubusercontent.com/bahadirdogru/webserver-automate/master/Install_server_debian_9.sh
-
+### Mysql (MariaDb) Auto Backup Script
 wget https://raw.githubusercontent.com/bahadirdogru/webserver-automate/master/mysql_backups.sh
