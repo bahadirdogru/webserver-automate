@@ -15,4 +15,5 @@ With Ajenti web panel configure a nginx Web Server. Also there is auto backup sh
 wget https://raw.githubusercontent.com/bahadirdogru/webserver-automate/master/mysql_backups.sh
 
 ### Why Mariadb?
-[Presantation (turkish language)](https://topluluk.ozguryazilim.com.tr/wp-content/sunumlar/mariadb-vs-mysql/#(1))
+[Presantation (turkish)](https://topluluk.ozguryazilim.com.tr/wp-content/sunumlar/mariadb-vs-mysql/#(1))
+[Blog (english)](https://kinsta.com/blog/mariadb-vs-mysql/)
