@@ -59,7 +59,7 @@ sleep 3;
 cd /tmp || exit;
 apt install ca-certificates apt-transport-https;
 wget -q https://packages.sury.org/php/apt.gpg -O- | sudo apt-key add -;
-echo "deb https://packages.sury.org/php/ stretch main" | sudo tee /etc/apt/sources.list.d/php.list;
+echo "deb https://packages.sury.org/php/ buster main" | sudo tee /etc/apt/sources.list.d/php.list;
 rm apt.gpg;
 
 # I add latest stable nginx repositery.
