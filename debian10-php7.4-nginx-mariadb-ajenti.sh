@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# For Debian 9 Stretch
+# For Debian 10 Buster
 # Checked in https://www.shellcheck.net/
 # Written by Bahadır Doğru (bahadirdogru.com)
 
@@ -76,9 +76,10 @@ echo deb-src http://nginx.org/packages/debian/ stretch nginx >> /etc/apt/sources
 clear;
 echo "---*** Adding  MariaDB repository ***---";
 sleep 3;
-sudo apt-get install software-properties-common dirmngr
-sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
-sudo add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://ams2.mirrors.digitalocean.com/mariadb/repo/10.5/debian stretch main'
+apt-get install software-properties-common dirmngr
+apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
+add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://ams2.mirrors.digitalocean.com/mariadb/repo/10.5/debian buster main'
+
 
 
 # Cleaning and updating server to be ready.
