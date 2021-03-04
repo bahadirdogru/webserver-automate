@@ -68,8 +68,8 @@ echo "---*** Adding Nginx repository ***---";
 sleep 3;
 wget https://nginx.org/keys/nginx_signing.key;
 apt-key add nginx_signing.key;
-echo deb http://nginx.org/packages/debian/ stretch nginx >> /etc/apt/sources.list;
-echo deb-src http://nginx.org/packages/debian/ stretch nginx >> /etc/apt/sources.list;
+echo deb http://nginx.org/packages/debian/ buster nginx >> /etc/apt/sources.list;
+echo deb-src http://nginx.org/packages/debian/ buster nginx >> /etc/apt/sources.list;
 
 # Add MariaDB Repository
 # Get latest link from https://downloads.mariadb.org/mariadb/repositories/#mirror=digitalocean-ams
